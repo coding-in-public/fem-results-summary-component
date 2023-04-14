@@ -1,0 +1,23 @@
+---
+import summaryData from "../data/data.json";
+---
+
+<div class="summary">
+  <p>Summary</p>
+  <div class="summary-cards">
+    {
+      summaryData.map((d) => (
+        <div class="summary-card" data-color={d.color}>
+          <div class="category">
+            <img src={d.icon} alt="" />
+            <p>{d.category}</p>
+          </div>
+          <p class="score">
+            <span>{d.score}</span> / 100
+          </p>
+        </div>
+      ))
+    }
+  </div>
+  <button class="btn">Continue</button>
+</div>

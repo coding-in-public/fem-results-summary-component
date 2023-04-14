@@ -1,0 +1,24 @@
+---
+import summaryData from "../data/data.json";
+
+const average =
+  summaryData.reduce((acc, item) => acc + item.score, 0) / summaryData.length;
+
+const averageFormatted = new Intl.NumberFormat(undefined, {
+  maximumSignificantDigits: 2,
+}).format(average);
+---
+
+<div class="overview">
+  <h2>Your Result</h2>
+  <div class="average">
+    <p class="num">{averageFormatted}</p>
+    <p class="body-text">of 100</p>
+  </div>
+  <div class="desc">
+    <p class="title">Great</p>
+    <p class="body-text">
+      You scored higher than 65% of the people who have taken these tests.
+    </p>
+  </div>
+</div>
